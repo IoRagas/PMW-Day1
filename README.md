@@ -20,12 +20,11 @@ Built with performance and aesthetics in mind, this project adheres to modern we
 
 ## 📂 Project Architecture
 
-The directory structure is minimal, efficient, and self-contained:
+The directory structure is extremely minimal, efficient, and fully self-contained in a single page:
 
 ```text
 PMW-Day1/
-├── index.html        # Main markup structure, metadata, & links
-├── style.css         # Custom stylesheet, layout engine, & animation definitions
+├── index.html        # Single-file webpage containing all HTML markup and embedded CSS styles
 └── README.md         # Documentation and project overview
 ```
 
