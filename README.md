@@ -20,13 +20,36 @@ Built with performance and aesthetics in mind, this project adheres to modern we
 
 ## 📂 Project Architecture
 
-The directory structure is extremely minimal, efficient, and fully self-contained in a single page:
+The updated project directory structure is organized as follows:
 
 ```text
 PMW-Day1/
-├── index.html        # Single-file webpage containing all HTML markup and embedded CSS styles
-└── README.md         # Documentation and project overview
+├── index.html                  # Single-file webpage containing profile styles and markup
+├── README.md                   # Documentation and project overview
+└── 3d_reconstruction/          # 3D Reconstruction Module
+    ├── reconstruct_3d.py       # Standalone Python script for depth estimation & PLY export
+    ├── reconstruct_3d_notebook.ipynb # Step-by-step Jupyter Notebook walkthrough
+    ├── notes.md                # Research comparisons, camera equations, and setup guide
+    ├── input.jpg               # Input image (downloaded automatically)
+    ├── output_depth.png        # Generated grayscale depth map
+    ├── output_comparison.png   # Combined side-by-side visualization
+    └── output_pointcloud.ply   # Resulting dense colorized 3D point cloud (1.8M+ points)
 ```
+
+---
+
+## 🌀 3D Reconstruction Research & Pipeline
+
+As part of the PMW-Day1 evaluation, we researched practical 3D reconstruction methods and implemented a complete pipeline to generate a 3D point cloud from a single image using **Depth Anything V2**.
+
+- **Researched Methods**: Compares Structure from Motion (SfM), Multi-View Stereo (MVS), NeRF, 3D Gaussian Splatting, and Monocular Depth estimation. Detailed comparison notes can be found in the [3D Reconstruction Notes](file:///d:/VS_Code_Projects/PMW-Day1/3d_reconstruction/notes.md).
+- **Backprojection Geometry**: Uses inverse camera projection equations (pinhole camera model) to map pixel coords $(u, v)$ and depth $Z$ to 3D coordinates $(X, Y, Z)$ in camera space.
+- **Inference & Execution**: The script operates on GPU (via CUDA) if available, generating a high-density, color-mapped `.ply` model representing the visual scene.
+
+To run the pipeline or view the notebook, navigate to the `3d_reconstruction/` folder and check the setup guide in [notes.md](file:///d:/VS_Code_Projects/PMW-Day1/3d_reconstruction/notes.md).
+
+---
+
 
 ### Profile Content Breakdown
 
